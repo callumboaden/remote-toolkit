@@ -1,0 +1,125 @@
+/* Typography */
+$font-stack: "IBM Plex Sans", sans-serif;
+$font-weight-regular: 400;
+$font-weight-bold: 500;
+$font-size-large: 38px;
+$font-size-medium: 24px;
+$font-size-small: 12px;
+$font-size-x-small: 10px;
+
+/* Colors */
+$primary-text-color: #e8eaed;
+$secondary-text-color: #aaaaaa;
+$light-grey-text-color: #9ba0b3;
+$primary-background: #101014;
+$secondary-background: #1f2128;
+$card-background: #16171d;
+
+/* Layout */
+$container-width: 1140px;
+$spacing-large: 80px;
+$spacing-small: 30px;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $font-stack;
+  background: $primary-background;
+}
+
+button {
+  background: none;
+  border: none;
+}
+
+.container {
+  max-width: $container-width;
+  margin: 0 auto;
+}
+
+h1 {
+  margin: $spacing-large 0;
+  color: $primary-text-color;
+  font-size: $font-size-large;
+  font-weight: $font-weight-bold;
+}
+
+.filter {
+  background: $secondary-background;
+  border-radius: 10px;
+
+  .row {
+    display: flex;
+    justify-content: center;
+    padding: 25px 0;
+
+    button {
+      padding: 0 30px;
+      font-size: $font-size-small;
+      color: $secondary-text-color;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+  }
+}
+
+.results {
+  width: 100%;
+  margin-top: $spacing-small;
+  display: flex;
+  flex-wrap: wrap;
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: calc(25% - 10px);
+    min-height: 250px;
+    margin-top: 13px;
+    margin-right: 13px;
+    background: $card-background;
+
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+
+    .card-title {
+      color: $primary-text-color;
+      margin-bottom: 20px;
+    }
+
+    .card-text {
+      color: $secondary-text-color;
+    }
+
+    .category {
+      font-size: $font-size-small;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: $light-grey-text-color;
+    }
+
+    .card-body,
+    .card-footer {
+      padding: 20px;
+    }
+
+    .card-header {
+      min-height: 150px;
+      background: $primary-text-color;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+}

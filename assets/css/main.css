@@ -1,0 +1,134 @@
+/* Typography */
+/* Colors */
+/* Layout */
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "IBM Plex Sans", sans-serif;
+  background: #101014;
+}
+
+button {
+  background: none;
+  border: none;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+h1 {
+  margin: 80px 0;
+  color: #e8eaed;
+  font-size: 38px;
+  font-weight: 500;
+}
+
+.filter {
+  background: #1f2128;
+  border-radius: 10px;
+}
+
+.filter .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 25px 0;
+}
+
+.filter .row button {
+  padding: 0 30px;
+  font-size: 12px;
+  color: #aaaaaa;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.results {
+  width: 100%;
+  margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.results .card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: calc(25% - 10px);
+  min-height: 250px;
+  margin-top: 13px;
+  margin-right: 13px;
+  background: #16171d;
+}
+
+.results .card:nth-child(4n) {
+  margin-right: 0;
+}
+
+.results .card .card-title {
+  color: #e8eaed;
+  margin-bottom: 20px;
+}
+
+.results .card .card-text {
+  color: #aaaaaa;
+}
+
+.results .card .category {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #9ba0b3;
+}
+
+.results .card .card-body,
+.results .card .card-footer {
+  padding: 20px;
+}
+
+.results .card .card-header {
+  min-height: 150px;
+  background: #e8eaed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.results .card .card-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+/*# sourceMappingURL=main.css.map */
