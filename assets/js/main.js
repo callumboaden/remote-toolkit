@@ -2,12 +2,12 @@ import { tools } from "./tools.js";
 
 const results = document.querySelector(".results");
 const filterButtons = document.querySelectorAll(".filter button");
-const filterSelect = document.querySelector("select");
+const form = document.querySelector("form");
 
 renderCards();
 addEventListeners();
 
-filterSelect.addEventListener("click", (e) => {
+form.addEventListener("change", (e) => {
   const filter = e.target.value;
   if (filter !== "") {
     if (filter === "all") {
