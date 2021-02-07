@@ -31,7 +31,17 @@ body {
   background: $primary-background;
 }
 
-button {
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+button,
+select {
   background: none;
   border: none;
 }
@@ -39,6 +49,7 @@ button {
 .container {
   max-width: $container-width;
   margin: 0 auto;
+  padding: 0 15px;
 }
 
 h1 {
@@ -48,21 +59,80 @@ h1 {
   font-weight: $font-weight-bold;
 }
 
+.filter-mobile {
+  width: 100%;
+  height: 50px;
+  background: $secondary-background;
+  color: $primary-text-color;
+  text-align: center;
+  padding-left: 20px;
+  font-size: $font-size-small;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  background-image: linear-gradient(45deg, transparent 50%, gray 50%),
+    linear-gradient(135deg, gray 50%, transparent 50%);
+  background-position: calc(100% - 20px) calc(1em + 9px),
+    calc(100% - 15px) calc(1em + 9px), calc(100% - 2.5em) 0.5em;
+  background-size: 5px 5px, 5px 5px, 1px 1.5em;
+  background-repeat: no-repeat;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+
+  &:focus {
+    background-image: linear-gradient(45deg, grey 50%, transparent 50%),
+      linear-gradient(135deg, transparent 50%, grey 50%);
+    background-position: calc(100% - 15px) 1.5em, calc(100% - 20px) 1.5em,
+      calc(100% - 2.5em) 0.5em;
+    background-size: 5px 5px, 5px 5px, 1px 1.5em;
+    background-repeat: no-repeat;
+    border-color: green;
+    outline: 0;
+  }
+
+  option {
+    font-family: $font-stack;
+    font-size: $font-size-small;
+    text-transform: uppercase;
+    letter-spacing: 3px !important;
+  }
+}
+
 .filter {
   background: $secondary-background;
   border-radius: 10px;
+  display: none;
+
+  @media (min-width: 768px) {
+    display: block;
+  }
 
   .row {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     padding: 25px 0;
 
     button {
       padding: 0 30px;
       font-size: $font-size-small;
+      font-weight: $font-weight-regular;
       color: $secondary-text-color;
       text-transform: uppercase;
       letter-spacing: 3px;
+
+      &:focus {
+        outline: none;
+      }
+
+      &.active {
+        color: $primary-text-color;
+        font-weight: $font-weight-bold;
+      }
     }
   }
 }
@@ -70,24 +140,55 @@ h1 {
 .results {
   width: 100%;
   margin-top: $spacing-small;
+  margin-bottom: $spacing-large;
   display: flex;
   flex-wrap: wrap;
+
+  &:hover {
+    .card {
+      opacity: 0.3;
+    }
+  }
 
   .card {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    width: calc(25% - 10px);
+    width: 100%;
     min-height: 250px;
     margin-top: 13px;
-    margin-right: 13px;
+    /* margin-right: 13px; */
     background: $card-background;
+    transition: 0.25s;
 
-    &:nth-child(4n) {
+    @media (min-width: 540px) and (max-width: 760px) {
+      width: calc(50% - 8px);
+      margin-right: 13px;
+      &:nth-child(2n) {
+        margin-right: 0;
+      }
+    }
+
+    @media (min-width: 760px) {
+      margin-right: 13px;
+      width: calc(33% - 8px);
+      &:nth-child(3n) {
+        margin-right: 0;
+      }
+    }
+
+    /*     &:nth-child(4n) {
       margin-right: 0;
+    } */
+
+    &:hover {
+      opacity: 1;
+      transform: translateY(-5px);
+      cursor: pointer;
     }
 
     .card-title {
+      font-size: $font-size-medium;
+      font-weight: $font-weight-bold;
       color: $primary-text-color;
       margin-bottom: 20px;
     }
@@ -117,9 +218,10 @@ h1 {
     }
 
     .card-footer {
+      height: 100%;
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      align-items: flex-end;
     }
   }
 }

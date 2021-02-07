@@ -13,7 +13,17 @@ body {
   background: #101014;
 }
 
-button {
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+button,
+select {
   background: none;
   border: none;
 }
@@ -21,6 +31,7 @@ button {
 .container {
   max-width: 1140px;
   margin: 0 auto;
+  padding: 0 15px;
 }
 
 h1 {
@@ -30,9 +41,56 @@ h1 {
   font-weight: 500;
 }
 
+.filter-mobile {
+  width: 100%;
+  height: 50px;
+  background: #1f2128;
+  color: #e8eaed;
+  text-align: center;
+  padding-left: 20px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, gray 50%), linear-gradient(135deg, gray 50%, transparent 50%);
+  background-position: calc(100% - 20px) calc(1em + 9px), calc(100% - 15px) calc(1em + 9px), calc(100% - 2.5em) 0.5em;
+  background-size: 5px 5px, 5px 5px, 1px 1.5em;
+  background-repeat: no-repeat;
+}
+
+@media (min-width: 768px) {
+  .filter-mobile {
+    display: none;
+  }
+}
+
+.filter-mobile:focus {
+  background-image: linear-gradient(45deg, grey 50%, transparent 50%), linear-gradient(135deg, transparent 50%, grey 50%);
+  background-position: calc(100% - 15px) 1.5em, calc(100% - 20px) 1.5em, calc(100% - 2.5em) 0.5em;
+  background-size: 5px 5px, 5px 5px, 1px 1.5em;
+  background-repeat: no-repeat;
+  border-color: green;
+  outline: 0;
+}
+
+.filter-mobile option {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 3px !important;
+}
+
 .filter {
   background: #1f2128;
   border-radius: 10px;
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .filter {
+    display: block;
+  }
 }
 
 .filter .row {
@@ -42,25 +100,42 @@ h1 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   padding: 25px 0;
 }
 
 .filter .row button {
   padding: 0 30px;
   font-size: 12px;
+  font-weight: 400;
   color: #aaaaaa;
   text-transform: uppercase;
   letter-spacing: 3px;
 }
 
+.filter .row button:focus {
+  outline: none;
+}
+
+.filter .row button.active {
+  color: #e8eaed;
+  font-weight: 500;
+}
+
 .results {
   width: 100%;
   margin-top: 30px;
+  margin-bottom: 80px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+}
+
+.results:hover .card {
+  opacity: 0.3;
 }
 
 .results .card {
@@ -71,21 +146,48 @@ h1 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  width: calc(25% - 10px);
+  width: 100%;
   min-height: 250px;
   margin-top: 13px;
-  margin-right: 13px;
+  /* margin-right: 13px; */
   background: #16171d;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+  /*     &:nth-child(4n) {
+      margin-right: 0;
+    } */
 }
 
-.results .card:nth-child(4n) {
-  margin-right: 0;
+@media (min-width: 540px) and (max-width: 760px) {
+  .results .card {
+    width: calc(50% - 8px);
+    margin-right: 13px;
+  }
+  .results .card:nth-child(2n) {
+    margin-right: 0;
+  }
+}
+
+@media (min-width: 760px) {
+  .results .card {
+    margin-right: 13px;
+    width: calc(33% - 8px);
+  }
+  .results .card:nth-child(3n) {
+    margin-right: 0;
+  }
+}
+
+.results .card:hover {
+  opacity: 1;
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+  cursor: pointer;
 }
 
 .results .card .card-title {
+  font-size: 24px;
+  font-weight: 500;
   color: #e8eaed;
   margin-bottom: 20px;
 }
@@ -121,14 +223,15 @@ h1 {
 }
 
 .results .card .card-footer {
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
 }
 /*# sourceMappingURL=main.css.map */
