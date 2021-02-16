@@ -34,6 +34,10 @@ select {
   padding: 0 15px;
 }
 
+.logo {
+  margin-top: 2rem;
+}
+
 h1 {
   margin: 80px 0;
   color: #e8eaed;
