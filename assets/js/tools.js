@@ -30,6 +30,13 @@ export const tools = [
     url: "https://www.google.com/drive",
   },
   {
+    name: "Todoist",
+    description: "Keep all your todos organised and accounted for.",
+    category: "Project Management",
+    image: "logo-todoist.svg",
+    url: "https://todoist.com/features",
+  },
+  {
     name: "Slack",
     description:
       "A real-time messaging platform that lets you chat in pairs, small groups or as an entire team.",
@@ -118,6 +125,15 @@ export const tools = [
     url: "https://expressvpn.com/",
   },
   {
+    name: "Nexstand on Spotify",
+    description:
+      "Curated playlists by the team at Nexstand to help you stay relaxed and focused during the day.",
+    category: "Focus",
+    image: "logo-nexstand-spotify.png",
+    url:
+      "https://open.spotify.com/user/igbaz0lkfu9vo0607cm1sy04w?si=DXTr_YoFT06J7SkRf5_Tmg",
+  },
+  {
     name: "Toggl",
     description:
       "Break your day into smaller, more digestible tasks and keep track of time spent on each task.",
@@ -140,5 +156,68 @@ export const tools = [
     category: "Focus",
     image: "logo-nomad-list.png",
     url: "https://nomadlist.com/",
+  },
+
+  {
+    name: "Nexstand",
+    description:
+      "Portable laptop stand that transforms your laptop into an ergonomic mobile workstation.",
+    category: "Gear",
+    image: "nexstand-laptop-stand.png",
+    url: "https://nexstand.eu/products/nexstand-k2-laptop-stand-1",
+  },
+  {
+    name: "Kokoon",
+    description:
+      "Headphones that help you get a better sleep, reduce stress and unlock a happier, healthier you",
+    category: "Gear",
+    image: "logo-kokoon.png",
+    url: "https://eu.kokoon.io/?region=eu",
+  },
+  {
+    name: "Deep Work by Cal Newport",
+    description:
+      "Deep Work is an indispensable guide to anyone seeking focused success in a distracted world.",
+    category: "Gear",
+    image: "deep-work-book.png",
+    url: "https://www.calnewport.com/books/deep-work/",
+  },
+  {
+    name: "Affinity Designer",
+    description:
+      "Create concept art, print projects, logos, icons, UI designs, mock-ups and more.",
+    category: "Design",
+    image: "logo-affinity-designer.svg",
+    url: "https://affinity.serif.com/en-gb/designer/",
+  },
+  {
+    name: "Canva",
+    description: "Create beautiful designs with your team.",
+    category: "Design",
+    image: "logo-canva.svg",
+    url: "https://www.canva.com/",
+  },
+  {
+    name: "aText Typing Accelerator",
+    description:
+      "aText accelerates your typing in any application by replacing abbreviations with frequently used phrases you define.",
+    category: "Productivity",
+    image: "logo-atext.png",
+    url: "https://www.trankynam.com/atext/",
+  },
+  {
+    name: "Hazel",
+    description:
+      "Hazel watches whatever folders you tell it to, automatically organizing your files according to the rules you create.",
+    category: "Productivity",
+    image: "logo-hazel.png",
+    url: "https://www.noodlesoft.com/",
+  },
+  {
+    name: "LastPass",
+    description: "The best way to manage passwords.",
+    category: "Security",
+    image: "logo-lastpass.png",
+    url: "https://www.lastpass.com/how-lastpass-works",
   },
 ];
